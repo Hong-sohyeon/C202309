@@ -2,11 +2,12 @@
 
 int hapf(int value);	// >> 피호출자 : 함수 원형 선언하기
 
-void main()		// >> 호출자
+int main()		// >> 호출자
 {
 	printf("1부터   10까지의 합은 %d\n", hapf(10));		// 1부터 10까지의 합 함수&value 입력
 	printf("1부터  100까지의 합은 %d\n", hapf(100));	// 1부터 100까지의 합 함수&value 입력
 	printf("1부터 1000까지의 합은 %d\n", hapf(1000));	// 1부터 1000까지의 합 함수&value 입력
+	return 0;
 }
 
 int hapf(int value)		// hapf 함수 정의 ↓

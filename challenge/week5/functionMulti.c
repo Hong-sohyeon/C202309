@@ -2,11 +2,12 @@
 
 int multiF(long value);		// >> 피호출자 : 함수 원형 선언하기
 
-void main()		// >> 호출자
+int main()		// >> 호출자
 {
 	printf("1부터  2까지의 곱은 %d\n", multiF(2));		// 1부터 2까지의 곱 함수&value 입력
 	printf("1부터  3까지의 곱은 %d\n", multiF(3));		// 1부터 3까지의 곱 함수&value 입력
 	printf("1부터  5까지의 곱은 %d\n", multiF(5));		// 1부터 5까지의 곱 함수&value 입력
+	return 0;
 }
 
 int multiF(long value)	// multiF 함수 정의 ↓

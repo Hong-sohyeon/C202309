@@ -29,33 +29,32 @@ void classifyStudents(int scores[], char targetGrade) {
 	}
 }
 
-// sumScores 함수 선언하기
 int sumScores(int scores[]) {
 	int sum = 0;
-
 	for (int i = 0; i < STUDENTS; i++) {
 		sum += scores[i];
 	}
 	return sum;
 }
 
-// averageScores함수 선언하기
 double averageScores(int scores[]) {
-
 	int sum = sumScores(scores);
-	average = sum//STUDENTS
+	double average = (double)sum / (double)STUDENTS;
+	return average;
 }
 
-
-
-
-
-
-
-
-
-
-
+void printRanks(int scores[]) {
+	int ranks[STUDENTS];
+	for (int i = 0; i < STUDENTS; i++) {
+		ranks[i] = 1;	// 초기 순위를 1로 설정
+		for (int j = 0; j < STUDENTS; j++) {
+			if (scores[j] > scores[i]) {
+				ranks[i]++;	// 현재 요소보다 큰 다른 요소가 있으면 순위가 증가하는 기능
+			}
+		}
+		printf("%d 학생의 순위는 %d 입니다.\n", i, ranks[i]);
+	}
+}
 
 
 // 메인 함수 출력
@@ -67,7 +66,7 @@ int main() {
 		scanf_s("%d", &scores[i]);
 	}
 
-	char ch = getchar();	// 버퍼 임시 저장 변수, 엔터 지우기 위해
+	char ch = getchar(); //버퍼 임시 저장 변수, 엔터 지우기 위해
 
 	char target;
 	printf("특정 점수 (A, B, C, D, F)를 입력하시오:");
@@ -77,7 +76,7 @@ int main() {
 
 	int sum = sumScores(scores);
 	double average = averageScores(scores);
-	printf("학생들 점수의 총 합은 %d 이고, 평균 값은 %lf 입니다.\n", sum, average);
+	printf("학생들 점수의 총합은 %d 이고, 평균 값은 %lf 입니다.\n", sum, average);
 
 	printRanks(scores);
 
